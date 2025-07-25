@@ -53,6 +53,7 @@ public class AuthService {
         user = userRepository.save(user);
 
         return jwtUtil.generateToken(user.getEmail(), user.getRole());
+        // hello
     }
 
     public void loginUser(UserRequest userDTO) {
