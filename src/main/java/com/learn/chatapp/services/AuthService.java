@@ -49,7 +49,7 @@ public class AuthService {
         }
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
-        user.setRole(Role.APPLICANT);
+        user.setRole(request.getRole());
         user = userRepository.save(user);
 
         return jwtUtil.generateToken(user.getEmail(), user.getRole());
